@@ -59,19 +59,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Use standard paths; Next.js Link adds the basePath automatically */}
       <Link href="/traditional" className="strip">
-        <img src="/elements/traditional.jpg" alt="Traditional Art" />
+        <img src="/jamiehwangblacksite/elements/traditional.jpg" alt="Traditional Art" />
         <h2>TRADITIONAL</h2>
       </Link>
 
       <Link href="/digital" className="strip">
-        <img src="/elements/digital.jpg" alt="Digital Art" />
+        <img src="/jamiehwangblacksite/elements/digital.jpg" alt="Digital Art" />
         <h2>DIGITAL</h2>
       </Link>
 
       <Link href="/about" className="strip">
-        <img src="/elements/about.jpg" alt="About Me" />
+        <img src="/jamiehwangblacksite/elements/about.jpg" alt="About Me" />
         <h2>ABOUT ME</h2>
       </Link>
 
