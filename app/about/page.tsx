@@ -1,38 +1,12 @@
 'use client';
 
 import '../../styles/artist.css';
+import Navbar from '@/components/Navbar';
 
 export default function About() {
   return (
     <>
-      <header className="navbar">
-        <div className="logo">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo.WEBP-V3gglHA3HHEQgTfTBmccp7arySBO1p.webp" alt="Logo" />
-        </div>
-
-        <nav>
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/#gallery">Gallery</a>
-            </li>
-            <li>
-              <a href="/traditional">Traditional</a>
-            </li>
-            <li>
-              <a href="/digital">Digital</a>
-            </li>
-            <li>
-              <a href="/about">About</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Navbar />
 
       {/* About Me Section */}
       <section className="about-section">
