@@ -52,21 +52,21 @@ export default function Home() {
 
       <section className="faces-section">
         <div className="faces-scroll">
-          <img src="/faces/face1.PNG" alt="Face 1" />
-          <img src="/faces/face2.PNG" alt="Face 2" />
-          <img src="/faces/face3.PNG" alt="Face 3" />
-          <img src="/faces/face4.PNG" alt="Face 4" />
-          <img src="/faces/face5.PNG" alt="Face 5" />
-          <img src="/faces/face6.PNG" alt="Face 6" />
-          <img src="/faces/face7.PNG" alt="Face 7" />
+          <img src="/jamiehwangblacksite/gallery//faces/face1.PNG" alt="Face 1" />
+          <img src="/jamiehwangblacksite/gallery//faces/face2.PNG" alt="Face 2" />
+          <img src="/jamiehwangblacksite/gallery//faces/face3.PNG" alt="Face 3" />
+          <img src="/jamiehwangblacksite/gallery//faces/face4.PNG" alt="Face 4" />
+          <img src="/jamiehwangblacksite/gallery//faces/face5.PNG" alt="Face 5" />
+          <img src="/jamiehwangblacksite/gallery//faces/face6.PNG" alt="Face 6" />
+          <img src="/jamiehwangblacksite/gallery//faces/face7.PNG" alt="Face 7" />
           {/* Duplicate faces for seamless loop */}
-          <img src="/faces/face1.PNG" alt="Face 1" />
-          <img src="/faces/face2.PNG" alt="Face 2" />
-          <img src="/faces/face3.PNG" alt="Face 3" />
-          <img src="/faces/face4.PNG" alt="Face 4" />
-          <img src="/faces/face5.PNG" alt="Face 5" />
-          <img src="/faces/face6.PNG" alt="Face 6" />
-          <img src="/faces/face7.PNG" alt="Face 7" />
+          <img src="/jamiehwangblacksite/gallery//faces/face1.PNG" alt="Face 1" />
+          <img src="/jamiehwangblacksite/gallery//faces/face2.PNG" alt="Face 2" />
+          <img src="/jamiehwangblacksite/gallery//faces/face3.PNG" alt="Face 3" />
+          <img src="/jamiehwangblacksite/gallery//faces/face4.PNG" alt="Face 4" />
+          <img src="/jamiehwangblacksite/gallery//faces/face5.PNG" alt="Face 5" />
+          <img src="/jamiehwangblacksite/gallery//faces/face6.PNG" alt="Face 6" />
+          <img src="/jamiehwangblacksite/gallery//faces/face7.PNG" alt="Face 7" />
         </div>
       </section>
 
