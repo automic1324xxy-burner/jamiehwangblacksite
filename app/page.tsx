@@ -60,17 +60,17 @@ export default function Home() {
       </section>
 
       <Link href="/traditional" className="strip">
-        <img src="/jamiehwangblacksite/elements/traditional.jpg" alt="Traditional Art" />
+        <img src="/jamiehwangblacksite/public/elements/traditional.jpg" alt="Traditional Art" />
         <h2>TRADITIONAL</h2>
       </Link>
 
       <Link href="/digital" className="strip">
-        <img src="/jamiehwangblacksite/elements/digital.jpg" alt="Digital Art" />
+        <img src="/jamiehwangblacksite/public/elements/digital.jpg" alt="Digital Art" />
         <h2>DIGITAL</h2>
       </Link>
 
       <Link href="/about" className="strip">
-        <img src="/jamiehwangblacksite/elements/about.jpg" alt="About Me" />
+        <img src="/jamiehwangblacksite/public/elements/about.jpg" alt="About Me" />
         <h2>ABOUT ME</h2>
       </Link>
 
