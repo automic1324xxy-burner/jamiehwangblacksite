@@ -1,32 +1,22 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Image from 'next/image'; // Ensure this is imported
+import Link from 'next/link';
 import '../styles/artist.css';
 import Navbar from '@/components/Navbar';
 
 export default function Home() {
+  // 1. In a static site, we can't fetch from /api/gallery at runtime.
+  // For now, let's use a hardcoded list or you can move the file-reading 
+  // logic to a build-time constant.
+  const [galleryImages, setGalleryImages] = useState<string[]>([]);
+
   useEffect(() => {
-    // Load gallery images
-    async function loadGallery() {
-      const gallery = document.getElementById('gallery-grid');
-      if (!gallery) return;
-
-      try {
-        const response = await fetch('/api/gallery');
-        const files = await response.json();
-
-        files.forEach((file: string) => {
-          const img = document.createElement('img');
-          img.src = `/gallery/${file}`;
-          img.loading = 'lazy';
-          gallery.appendChild(img);
-        });
-      } catch (error) {
-        console.error('Error loading gallery:', error);
-      }
-    }
-
-    loadGallery();
+    // Since API routes don't work on GitHub Pages, you should manually 
+    // list your gallery filenames here for now, or use a static JSON file.
+    const staticFiles = ['image1.jpg', 'image2.jpg']; // Add your filenames here
+    setGalleryImages(staticFiles);
   }, []);
 
   return (
@@ -52,45 +42,53 @@ export default function Home() {
 
       <section className="faces-section">
         <div className="faces-scroll">
-          <img src="/jamiehwangblacksite/gallery//faces/face1.PNG" alt="Face 1" />
-          <img src="/jamiehwangblacksite/gallery//faces/face2.PNG" alt="Face 2" />
-          <img src="/jamiehwangblacksite/gallery//faces/face3.PNG" alt="Face 3" />
-          <img src="/jamiehwangblacksite/gallery//faces/face4.PNG" alt="Face 4" />
-          <img src="/jamiehwangblacksite/gallery//faces/face5.PNG" alt="Face 5" />
-          <img src="/jamiehwangblacksite/gallery//faces/face6.PNG" alt="Face 6" />
-          <img src="/jamiehwangblacksite/gallery//faces/face7.PNG" alt="Face 7" />
-          {/* Duplicate faces for seamless loop */}
-          <img src="/jamiehwangblacksite/gallery//faces/face1.PNG" alt="Face 1" />
-          <img src="/jamiehwangblacksite/gallery//faces/face2.PNG" alt="Face 2" />
-          <img src="/jamiehwangblacksite/gallery//faces/face3.PNG" alt="Face 3" />
-          <img src="/jamiehwangblacksite/gallery//faces/face4.PNG" alt="Face 4" />
-          <img src="/jamiehwangblacksite/gallery//faces/face5.PNG" alt="Face 5" />
-          <img src="/jamiehwangblacksite/gallery//faces/face6.PNG" alt="Face 6" />
-          <img src="/jamiehwangblacksite/gallery//faces/face7.PNG" alt="Face 7" />
+          {/* 2. Don't hardcode the repo name in the src. 
+              Next.js adds it automatically if basePath is in next.config.mjs.
+              Also, removed the double // */}
+          <Image src="/gallery/faces/face1.PNG" alt="Face 1" width={200} height={200} />
+          <Image src="/gallery/faces/face2.PNG" alt="Face 2" width={200} height={200} />
+          <Image src="/gallery/faces/face3.PNG" alt="Face 3" width={200} height={200} />
+          <Image src="/gallery/faces/face4.PNG" alt="Face 4" width={200} height={200} />
+          <Image src="/gallery/faces/face5.PNG" alt="Face 5" width={200} height={200} />
+          <Image src="/gallery/faces/face6.PNG" alt="Face 6" width={200} height={200} />
+          <Image src="/gallery/faces/face7.PNG" alt="Face 7" width={200} height={200} />
+          {/* Duplicates for loop */}
+          <Image src="/gallery/faces/face1.PNG" alt="Face 1" width={200} height={200} />
+          <Image src="/gallery/faces/face2.PNG" alt="Face 2" width={200} height={200} />
+          <Image src="/gallery/faces/face3.PNG" alt="Face 3" width={200} height={200} />
         </div>
       </section>
 
-      <a href="/traditional" className="strip">
+      {/* 3. Use standard paths; Next.js Link adds the basePath automatically */}
+      <Link href="/traditional" className="strip">
         <img src="/elements/traditional.jpg" alt="Traditional Art" />
         <h2>TRADITIONAL</h2>
-      </a>
+      </Link>
 
-      <a href="/digital" className="strip">
+      <Link href="/digital" className="strip">
         <img src="/elements/digital.jpg" alt="Digital Art" />
         <h2>DIGITAL</h2>
-      </a>
+      </Link>
 
-      <a href="/about" className="strip">
+      <Link href="/about" className="strip">
         <img src="/elements/about.jpg" alt="About Me" />
         <h2>ABOUT ME</h2>
-      </a>
+      </Link>
 
       <section id="gallery" className="gallery-section">
         <h2 className="gallery-title">GALLERY</h2>
-
         <p className="gallery-subtitle">All my works in one place, take a scroll! :)</p>
 
-        <div id="gallery-grid" className="gallery-grid"></div>
+        <div id="gallery-grid" className="gallery-grid">
+          {galleryImages.map((file, index) => (
+            <img 
+              key={index} 
+              src={`/gallery/${file}`} 
+              alt="Gallery item" 
+              loading="lazy" 
+            />
+          ))}
+        </div>
       </section>
     </>
   );
