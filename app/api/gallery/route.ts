@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 import { readdirSync } from 'fs';
 import { join } from 'path';
 import { NextRequest } from 'next/server';
