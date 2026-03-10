@@ -44,48 +44,44 @@ export default function Home() {
 
         <div className="hero-right">
           <p>
-            My name is Jamie Hwang-Black. I was born and raised in Daejeon,
-            South Korea. I am a multidisciplinary artist currently residing in
-            Chicago, centered in printmaking, collage, and mixed media art.
+            My name is Jamie Hwang-Black, or 황재연 [Hwah-ng Jeh-Yuhn]. I was born and raised in Daejeon,
+            South Korea and I currently reside in Downtown Chicago. I am a multidisciplinary centered in printmaking, collage, and mixed media art.
           </p>
         </div>
       </section>
 
       <section className="faces-section">
         <div className="faces-scroll">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face1.PNG-ol3JOxkaXcXkxrBbrq181kqaJxWw8f.png" alt="Face 1" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face2.PNG-AfIpJO7oeIDNCoM0GYRT4kUcEx7oVU.png" alt="Face 2" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face3.PNG-g2oNj3XtvKJ20JuLEfkywklsGQs3E5.png" alt="Face 3" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face4.PNG-H4w4ogSBCwxPMXZesf9NX2fBF2HvvF.png" alt="Face 4" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face5.PNG-90ZfsGK9A0bvG92ae40lVCRM5j52zE.png" alt="Face 5" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face6.PNG-Bn3CMDpnV6h6wimsYgApQME3hgS8dL.png" alt="Face 6" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face7.PNG-IVD1Df71n1PFXNhDCAT7ZwwWefGlgy.png" alt="Face 7" />
+          <img src="/faces/face1.PNG" alt="Face 1" />
+          <img src="/faces/face2.PNG" alt="Face 2" />
+          <img src="/faces/face3.PNG" alt="Face 3" />
+          <img src="/faces/face4.PNG" alt="Face 4" />
+          <img src="/faces/face5.PNG" alt="Face 5" />
+          <img src="/faces/face6.PNG" alt="Face 6" />
+          <img src="/faces/face7.PNG" alt="Face 7" />
           {/* Duplicate faces for seamless loop */}
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face1.PNG-ol3JOxkaXcXkxrBbrq181kqaJxWw8f.png" alt="Face 1" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face2.PNG-AfIpJO7oeIDNCoM0GYRT4kUcEx7oVU.png" alt="Face 2" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face3.PNG-g2oNj3XtvKJ20JuLEfkywklsGQs3E5.png" alt="Face 3" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face4.PNG-H4w4ogSBCwxPMXZesf9NX2fBF2HvvF.png" alt="Face 4" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face5.PNG-90ZfsGK9A0bvG92ae40lVCRM5j52zE.png" alt="Face 5" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face6.PNG-Bn3CMDpnV6h6wimsYgApQME3hgS8dL.png" alt="Face 6" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face7.PNG-IVD1Df71n1PFXNhDCAT7ZwwWefGlgy.png" alt="Face 7" />
+          <img src="/faces/face1.PNG" alt="Face 1" />
+          <img src="/faces/face2.PNG" alt="Face 2" />
+          <img src="/faces/face3.PNG" alt="Face 3" />
+          <img src="/faces/face4.PNG" alt="Face 4" />
+          <img src="/faces/face5.PNG" alt="Face 5" />
+          <img src="/faces/face6.PNG" alt="Face 6" />
+          <img src="/faces/face7.PNG" alt="Face 7" />
         </div>
       </section>
 
       <a href="/traditional" className="strip">
-        <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/traditional.JPG-CkwpcNA21IM0bo9iDQWUlbjMaCnev7.jpeg"
-          alt="Traditional Art"
-        />
+        <img src="/elements/traditional.jpg" alt="Traditional Art" />
         <h2>TRADITIONAL</h2>
       </a>
 
       <a href="/digital" className="strip">
-        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/digital.JPG-45y1Q9NBuSMFFRQfgQlwCtI2MCbbIv.jpeg" alt="Digital Art" />
+        <img src="/elements/digital.jpg" alt="Digital Art" />
         <h2>DIGITAL</h2>
       </a>
 
       <a href="/about" className="strip">
-        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/about.PNG-WqG4Ml7uNMFfCzrYk4RRbnGn5vFlJw.jpeg" alt="About Me" />
+        <img src="/elements/about.jpg" alt="About Me" />
         <h2>ABOUT ME</h2>
       </a>
 

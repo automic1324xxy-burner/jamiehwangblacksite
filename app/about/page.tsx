@@ -11,10 +11,7 @@ export default function About() {
       {/* About Me Section */}
       <section className="about-section">
         <div className="about-image">
-          <img 
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/about.PNG-WqG4Ml7uNMFfCzrYk4RRbnGn5vFlJw.jpeg" 
-            alt="Jamie Hwang-Black" 
-          />
+          <img src="/elements/about.jpg" alt="Jamie Hwang-Black" />
         </div>
 
         <div className="about-content">

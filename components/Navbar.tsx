@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div className="logo">
-        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo.WEBP-V3gglHA3HHEQgTfTBmccp7arySBO1p.webp" alt="Logo" />
+        <img src="/elements/logo.webp" alt="Logo" />
       </div>
 
       <button 
