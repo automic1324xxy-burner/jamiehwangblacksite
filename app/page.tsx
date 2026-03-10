@@ -45,7 +45,7 @@ export default function Home() {
         <div className="hero-right">
           <p>
             My name is Jamie Hwang-Black, or 황재연 [Hwah-ng Jeh-Yuhn]. I was born and raised in Daejeon,
-            South Korea and I currently reside in Downtown Chicago. I am a multidisciplinary centered in printmaking, collage, and mixed media art.
+            South Korea and I currently reside in Downtown Chicago. I am a multidisciplinary artist centered in printmaking, digital collage, illustration, and mixed media art.
           </p>
         </div>
       </section>
