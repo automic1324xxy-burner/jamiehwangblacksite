@@ -1,22 +1,29 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image'; // Ensure this is imported
+import Image from 'next/image'; 
 import Link from 'next/link';
 import '../styles/artist.css';
 import Navbar from '@/components/Navbar';
 
 export default function Home() {
-  // 1. In a static site, we can't fetch from /api/gallery at runtime.
-  // For now, let's use a hardcoded list or you can move the file-reading 
-  // logic to a build-time constant.
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
+  const repoName = '/jamiehwangblacksite';
 
   useEffect(() => {
-    // Since API routes don't work on GitHub Pages, you should manually 
-    // list your gallery filenames here for now, or use a static JSON file.
-    const staticFiles = ['image1.jpg', 'image2.jpg']; // Add your filenames here
-    setGalleryImages(staticFiles);
+    // Fetch the static JSON generated at build time
+    async function loadGallery() {
+      try {
+        const response = await fetch(`${repoName}/gallery-data.json`);
+        if (response.ok) {
+          const data = await response.json();
+          setGalleryImages(data);
+        }
+      } catch (error) {
+        console.error('Failed to load gallery data', error);
+      }
+    }
+    loadGallery();
   }, []);
 
   return (
@@ -94,9 +101,10 @@ export default function Home() {
           {galleryImages.map((file, index) => (
             <img 
               key={index} 
-              src={`/gallery/${file}`} 
+              src={`${repoName}/gallery/${file}`} 
               alt="Gallery item" 
               loading="lazy" 
+              className="gallery-item"
             />
           ))}
         </div>
