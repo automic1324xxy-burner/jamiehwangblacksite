@@ -60,7 +60,7 @@ export default function Home() {
       </section>
 
       <Link href="/traditional" className="strip">
-        <img src="/jamiehwangblacksite/public/elements/traditional.jpg" alt="Traditional Art" />
+        <img src="/jamiehwangblacksite/elements/traditional.jpg" alt="Traditional Art" />
         <h2>TRADITIONAL</h2>
       </Link>
 
