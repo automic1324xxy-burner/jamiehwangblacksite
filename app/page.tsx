@@ -33,9 +33,9 @@ export default function Home() {
       <section className="hero">
         <div className="hero-left">
           <h1>
-            JAMIE<br />
-            HWANG<br />
-            BLACK
+            ELAMIR<br />
+            HASSAN<br />
+            ELSADY
           </h1>
         </div>
 
