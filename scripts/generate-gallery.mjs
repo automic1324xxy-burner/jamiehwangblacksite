@@ -3,7 +3,7 @@ import path from 'path';
 
 const galleryDir = path.join(process.cwd(), 'public/gallery');
 // Change this to match your actual image extensions
-const validExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.PNG'];
+const validExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.PNG', '.JPG'];
 
 try {
   const files = fs.readdirSync(galleryDir)
@@ -18,3 +18,4 @@ try {
 } catch (error) {
   console.error('❌ Error generating gallery data:', error);
 }
+
