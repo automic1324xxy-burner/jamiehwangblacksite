@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/generate-gallery.mjs",
-    "build": "next build",
+    "build": "node scripts/generate-gallery.mjs && next build",
     "start": "next start",
     "lint": "next lint"
   },
