@@ -42,7 +42,7 @@ body {
 }
 
 .logo img {
-  height: 40px;
+  height: 50px;
 }
 
 /* Hamburger Menu Toggle */
@@ -206,7 +206,7 @@ body {
 /* GALLERY */
 
 .gallery-section {
-  padding: 100px 80px;
+  padding: 50px 10px;
   text-align: center;
 }
 
@@ -224,12 +224,12 @@ body {
 
 .gallery-grid {
   column-count: 3;
-  column-gap: 20px;
+  column-gap: 10px;
 }
 
 .gallery-grid img {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-radius: 4px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
