@@ -245,14 +245,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 60px;
+  gap: 50px;
   padding: 60px 80px;
   background: transparent;
 }
 
 .about-image {
   flex: 0 0 auto;
-  width: 350px;
+  width: 500px;
 }
 
 .about-image img {
@@ -267,15 +267,15 @@ body {
 }
 
 .about-content h2 {
-  font-size: 50px;
+  font-size: 70px;
   font-weight: 900;
   margin-bottom: 20px;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.05em;
 }
 
 .about-content p {
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 22px;
+  line-height: 1.6;
   text-align: justify;
 }
 
