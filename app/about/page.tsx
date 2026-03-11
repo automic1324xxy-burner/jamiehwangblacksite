@@ -11,7 +11,7 @@ export default function About() {
       {/* About Me Section */}
       <section className="about-section">
         <div className="about-image">
-          <Image src="/jamiehwangblacksite/elements/about.jpg" alt="Jamie Hwang-Black" />
+          <img src="/jamiehwangblacksite/elements/about.jpg" alt="Jamie Hwang-Black" />
         </div>
 
         <div className="about-content">
