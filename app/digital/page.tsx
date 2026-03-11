@@ -39,7 +39,7 @@ export default function Digital() {
       <section className="faces-section">
         <div className="faces-scroll">
           {/* Using local files instead of URL links */}
-          {[1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7].map((num, i) => (
+          {[1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7].map((num, i) => (
             <Image 
               key={i}
               src={`${repoName}/faces/face${num}.PNG`} 
