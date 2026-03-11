@@ -1,31 +1,30 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import '../../styles/artist.css';
 import Navbar from '@/components/Navbar';
 
 export default function Digital() {
+  const [galleryImages, setGalleryImages] = useState<string[]>([]);
+  const repoName = '/jamiehwangblacksite';
+
   useEffect(() => {
-    // Load gallery images filtered by "digital" prefix
     async function loadGallery() {
-      const gallery = document.getElementById('gallery-grid');
-      if (!gallery) return;
-
       try {
-        const response = await fetch('/api/gallery?prefix=digital');
-        const files = await response.json();
-
-        files.forEach((file: string) => {
-          const img = document.createElement('img');
-          img.src = `/gallery/${file}`;
-          img.loading = 'lazy';
-          gallery.appendChild(img);
-        });
+        const response = await fetch(`${repoName}/gallery-data.json`);
+        if (response.ok) {
+          const allFiles: string[] = await response.json();
+          // Filter: Only files starting with "digital"
+          const filtered = allFiles.filter(file => 
+            file.toLowerCase().startsWith('digital')
+          );
+          setGalleryImages(filtered);
+        }
       } catch (error) {
-        console.error('Error loading gallery:', error);
+        console.error('Error loading digital gallery:', error);
       }
     }
-
     loadGallery();
   }, []);
 
@@ -39,27 +38,32 @@ export default function Digital() {
 
       <section className="faces-section">
         <div className="faces-scroll">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face1.PNG-ol3JOxkaXcXkxrBbrq181kqaJxWw8f.png" alt="Face 1" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face2.PNG-AfIpJO7oeIDNCoM0GYRT4kUcEx7oVU.png" alt="Face 2" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face3.PNG-g2oNj3XtvKJ20JuLEfkywklsGQs3E5.png" alt="Face 3" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face4.PNG-H4w4ogSBCwxPMXZesf9NX2fBF2HvvF.png" alt="Face 4" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face5.PNG-90ZfsGK9A0bvG92ae40lVCRM5j52zE.png" alt="Face 5" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face6.PNG-Bn3CMDpnV6h6wimsYgApQME3hgS8dL.png" alt="Face 6" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face7.PNG-IVD1Df71n1PFXNhDCAT7ZwwWefGlgy.png" alt="Face 7" />
-          {/* Duplicate faces for seamless loop */}
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face1.PNG-ol3JOxkaXcXkxrBbrq181kqaJxWw8f.png" alt="Face 1" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face2.PNG-AfIpJO7oeIDNCoM0GYRT4kUcEx7oVU.png" alt="Face 2" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face3.PNG-g2oNj3XtvKJ20JuLEfkywklsGQs3E5.png" alt="Face 3" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face4.PNG-H4w4ogSBCwxPMXZesf9NX2fBF2HvvF.png" alt="Face 4" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face5.PNG-90ZfsGK9A0bvG92ae40lVCRM5j52zE.png" alt="Face 5" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face6.PNG-Bn3CMDpnV6h6wimsYgApQME3hgS8dL.png" alt="Face 6" />
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/face7.PNG-IVD1Df71n1PFXNhDCAT7ZwwWefGlgy.png" alt="Face 7" />
+          {/* Using local files instead of URL links */}
+          {[1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7].map((num, i) => (
+            <Image 
+              key={i}
+              src={`${repoName}/faces/face${num}.PNG`} 
+              alt={`Face ${num}`} 
+              width={200} 
+              height={200} 
+              unoptimized
+            />
+          ))}
         </div>
       </section>
-      
 
       <section id="gallery" className="gallery-section">
-        <div id="gallery-grid" className="gallery-grid"></div>
+        <div id="gallery-grid" className="gallery-grid">
+          {galleryImages.map((file, index) => (
+            <img 
+              key={index} 
+              src={`${repoName}/gallery/${file}`} 
+              alt="Traditional Art" 
+              loading="lazy" 
+              className="gallery-item"
+            />
+          ))}
+        </div>
       </section>
     </>
   );
